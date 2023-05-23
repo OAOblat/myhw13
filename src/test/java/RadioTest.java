@@ -39,7 +39,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @Test
+    @Test //скопирован
     public void shouldSetCurrentStationInMax() {
         Radio radio = new Radio();
         radio.setCurrentStation(9);
@@ -178,6 +178,15 @@ public class RadioTest {
         Radio radio = new Radio();
         radio.setCurrentVolume(101);
         int expected = 0;
+        int actual = radio.getCurrentStation();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldSetCurrentStationInMaxIfSetNumber() {
+        Radio radio = new Radio(20);
+        radio.setCurrentStation(19);
+        int expected = 19;
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
